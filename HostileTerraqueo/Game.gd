@@ -11,7 +11,7 @@ func _ready():
     randomize()
 
     # Set player inital position
-    $Player.position = $InitialPosition.position
+    $Player.position = $PlayerPosition.position
 
     # Start timers
     $JunkSpawnTimer.start()

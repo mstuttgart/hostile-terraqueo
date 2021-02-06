@@ -3,7 +3,7 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game.gd" type="Script" id=2]
 
-[sub_resource type="Curve2D" id=5]
+[sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 83.8778, 0.201751, 0, 0, 0, 0, 84, 48, 0, 0, 0, 0, 0, 47.875, 0, 0, 0, 0, -0.125, 0.5, 0, 0, 0, 0, 83.8778, 0.201751 )
 }
@@ -11,7 +11,7 @@ _data = {
 [node name="Game" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="BackgroundRect" type="ColorRect" parent="."]
 margin_right = 84.0
 margin_bottom = 48.0
 color = Color( 0.780392, 0.941176, 0.847059, 1 )
@@ -20,7 +20,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InitialPosition" type="Position2D" parent="."]
+[node name="PlayerPosition" type="Position2D" parent="."]
 position = Vector2( 42, 24 )
 __meta__ = {
 "_edit_lock_": true
@@ -30,7 +30,7 @@ __meta__ = {
 visible = true
 
 [node name="JunkPath" type="Path2D" parent="."]
-curve = SubResource( 5 )
+curve = SubResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
