@@ -16,6 +16,10 @@ func _ready():
     # Start timers
     $JunkSpawnTimer.start()
 
+    # Start score
+    $Score.start()
+
+
 func _on_JunkSpawnTimer_timeout():
     # Time to spawn junk in game scene
 
@@ -36,7 +40,9 @@ func _on_JunkSpawnTimer_timeout():
 
 # Get signal 'gameover' from Player node
 func _on_Player_gameover():
-    print('Gameover')
 
     # Stop Junk spawn Timer
     $JunkSpawnTimer.stop()
+
+    # Stop score count
+    $Score.stop()
