@@ -37,3 +37,6 @@ func _on_JunkSpawnTimer_timeout():
 # Get signal 'gameover' from Player node
 func _on_Player_gameover():
     print('Gameover')
+
+    # Stop Junk spawn Timer
+    $JunkSpawnTimer.stop()

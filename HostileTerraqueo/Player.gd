@@ -54,5 +54,8 @@ func _process(delta):
 
 
 func _on_Player_body_entered(body):
+
+    body.queue_free()
     emit_signal('gameover')
+
 
