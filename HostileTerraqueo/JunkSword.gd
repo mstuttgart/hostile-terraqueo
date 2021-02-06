@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+# Declare const here
 const MIN_SPEED = 50
 const MAX_SPEED = 70
 

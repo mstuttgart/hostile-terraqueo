@@ -57,7 +57,7 @@ func _process(delta):
 
 
 func _on_Player_body_entered(body):
-
+    # Remove junk body from tree
     body.queue_free()
     emit_signal('gameover')
 
