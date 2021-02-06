@@ -1,5 +1,8 @@
 extends Area2D
 
+# Create gameover signal
+signal gameover
+
 # Declare const here
 const SPEED = 50
 
@@ -48,3 +51,8 @@ func _process(delta):
     # Adjust player position to inside game screen
     position.x = clamp(position.x, player_size.x, screen_size.x - player_size.x)
     position.y = clamp(position.y, player_size.y, screen_size.y - player_size.y)
+
+
+func _on_Player_body_entered(body):
+    emit_signal('gameover')
+

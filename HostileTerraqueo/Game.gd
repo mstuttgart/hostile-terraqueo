@@ -10,13 +10,11 @@ func _ready():
     # Init random seed
     randomize()
 
+    # Set player inital position
+    $Player.position = $InitialPosition.position
+
     # Start timers
     $JunkTimer.start()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#    pass
 
 func _on_JunkTimer_timeout():
     # Time to spawn junk in game scene
@@ -35,3 +33,7 @@ func _on_JunkTimer_timeout():
 
     # Add junk to scene
     add_child(junk)
+
+# Get signal 'gameover' from Player node
+func _on_Player_gameover():
+    print('Gameover')
