@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fonts/ARK @somepx/Ark.otf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+outline_color = Color( 0.262745, 0.321569, 0.239216, 1 )
+font_data = ExtResource( 1 )
+
+[node name="GameOverCanvas" type="CanvasLayer"]
+
+[node name="GameOverLabel" type="Label" parent="."]
+margin_left = 16.2204
+margin_top = 20.0399
+margin_right = 124.22
+margin_bottom = 36.0399
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.262745, 0.321569, 0.239216, 1 )
+custom_colors/font_outline_modulate = Color( 0.262745, 0.321569, 0.239216, 1 )
+custom_colors/font_color_shadow = Color( 0.262745, 0.321569, 0.239216, 1 )
+text = "GAME OVER"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

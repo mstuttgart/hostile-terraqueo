@@ -57,8 +57,12 @@ func _process(delta):
 
 
 func _on_Player_body_entered(body):
+
     # Remove junk body from tree
     body.queue_free()
+
+    # Disable collision shape
+    $CollisionShape2D.set_deferred('disable', true)
+
+    # Emit gameover signal
     emit_signal('gameover')
-
-

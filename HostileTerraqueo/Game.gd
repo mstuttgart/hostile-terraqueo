@@ -4,6 +4,8 @@ var junk_list = [
     preload("res://JunkSword.tscn"),
 ]
 
+var game_over_canvas = preload("res://GameOverCanvas.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 
@@ -41,8 +43,14 @@ func _on_JunkSpawnTimer_timeout():
 # Get signal 'gameover' from Player node
 func _on_Player_gameover():
 
-    # Stop Junk spawn Timer
+    # Stop junk spawn Timer
     $JunkSpawnTimer.stop()
 
     # Stop score count
     $Score.stop()
+
+    # Remove player
+    $Player.queue_free()
+
+    # Instance GameOver message
+    add_child(game_over_canvas.instance())
