@@ -14,9 +14,9 @@ func _ready():
     $Player.position = $InitialPosition.position
 
     # Start timers
-    $JunkTimer.start()
+    $JunkSpawnTimer.start()
 
-func _on_JunkTimer_timeout():
+func _on_JunkSpawnTimer_timeout():
     # Time to spawn junk in game scene
 
     var idx = rand_range(0, junk_list.size() - 1)

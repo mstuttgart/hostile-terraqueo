@@ -39,8 +39,8 @@ __meta__ = {
 position = Vector2( 83.8778, 0.201751 )
 rotation = 1.56824
 
-[node name="JunkTimer" type="Timer" parent="."]
+[node name="JunkSpawnTimer" type="Timer" parent="."]
 wait_time = 0.5
 [connection signal="body_entered" from="Player" to="Player" method="_on_Player_body_entered"]
 [connection signal="gameover" from="Player" to="." method="_on_Player_gameover"]
-[connection signal="timeout" from="JunkTimer" to="." method="_on_JunkTimer_timeout"]
+[connection signal="timeout" from="JunkSpawnTimer" to="." method="_on_JunkSpawnTimer_timeout"]
