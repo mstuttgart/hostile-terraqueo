@@ -4,7 +4,7 @@ var junk_list = [
     preload("res://JunkSword.tscn"),
 ]
 
-var game_over_canvas = preload("res://GameOverCanvas.tscn")
+var game_over_screen = preload("res://GameOverScreen.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -53,4 +53,4 @@ func _on_Player_gameover():
     $Player.queue_free()
 
     # Instance GameOver message
-    add_child(game_over_canvas.instance())
+    add_child(game_over_screen.instance())
