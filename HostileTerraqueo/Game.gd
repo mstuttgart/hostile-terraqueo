@@ -21,9 +21,8 @@ func _ready():
     # Start score
     $Score.start()
 
-
+# Time to spawn junk in game scene
 func _on_JunkSpawnTimer_timeout():
-    # Time to spawn junk in game scene
 
     var idx = rand_range(0, junk_list.size() - 1)
 
