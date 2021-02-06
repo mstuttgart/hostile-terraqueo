@@ -19,6 +19,9 @@ func _ready():
     # Get player shape extents
     player_size = $CollisionShape2D.shape.get_extents()
 
+    # Start animation
+    $AnimatedSprite.play()
+
 # Get keyboard input
 func _get_input():
 
