@@ -3,7 +3,8 @@ extends RigidBody2D
 const MIN_SPEED = 50
 const MAX_SPEED = 70
 
-func move(pos, direction):
+
+func start(pos, direction):
 
     # Set the junk position
     position = pos

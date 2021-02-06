@@ -28,7 +28,7 @@ func _on_JunkTimer_timeout():
     $JunkPath/JunkSpawnPosition.offset = randi()
 
     # Move the junk
-    junk.move($JunkPath/JunkSpawnPosition.position,
+    junk.start($JunkPath/JunkSpawnPosition.position,
               $JunkPath/JunkSpawnPosition.rotation)
 
     # Add junk to scene
