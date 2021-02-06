@@ -14,14 +14,27 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=2]
 radius = 4.24836
 
-[node name="JunkSword" type="RigidBody2D"]
+[node name="JunkSword" type="RigidBody2D" groups=[
+"Junk",
+]]
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." groups=[
+"Junk",
+]]
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
+"Junk",
+]]
 shape = SubResource( 2 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+rect = Rect2( -4, -4, 8, 8 )
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
