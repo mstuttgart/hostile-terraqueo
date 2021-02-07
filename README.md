@@ -26,7 +26,7 @@ Project page [here](https://mstuttgart.itch.io/hostile-terraqueo).
 
 # Install 
 
-This game is avaliable in Ithio.io project page [here](https://mstuttgart.itch.io/hostile-terraqueo).
+This game is avaliable to download in Ithio.io project page [here](https://mstuttgart.itch.io/hostile-terraqueo).
 
 To run Linux version, please add run permission to executable:
 
