@@ -77,6 +77,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 69.8965, 8.34425 )
 frames = SubResource( 5 )
+frame = 2
 playing = true
 
 [node name="CreditLabel" type="Label" parent="."]
@@ -100,6 +101,7 @@ __meta__ = {
 
 [node name="PressSpaceButton" parent="." instance=ExtResource( 4 )]
 mouse_filter = 2
+action_mode = 0
 shortcut = SubResource( 8 )
 
 [node name="PressSpaceButtonTimer" type="Timer" parent="."]

@@ -43,7 +43,7 @@ position = Vector2( 83.8778, 0.201751 )
 rotation = 1.56824
 
 [node name="JunkSpawnTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.3
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
