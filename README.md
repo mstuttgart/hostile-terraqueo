@@ -28,9 +28,20 @@ Project page [here](https://mstuttgart.itch.io/hostile-terraqueo).
 
 This game is avaliable to download in Ithio.io project page [here](https://mstuttgart.itch.io/hostile-terraqueo).
 
+* Download the right version for your platform (Windows, or Linux)
+* Extract the zip
+* Find and open the executable
+
 To run Linux version, please add run permission to executable:
 
-> chmod +x HostileTerraqueo.x86_64
+> chmod +x HostileTerraqueo-0.1.0.x86_64
+
+# How to Play:
+
+The player must survive the longest amount of time without being hit by a Nokia3310.
+
+* SPACE: start the game
+* A, W, S, D: move the alien
 
 # Credits
 
