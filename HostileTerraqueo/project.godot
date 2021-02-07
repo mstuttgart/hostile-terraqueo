@@ -16,7 +16,9 @@ _global_script_class_icons={
 [application]
 
 config/name="HostileTerraqueo"
+config/description="The Nokia 3310 jam is dedicated to making games with the restrictions of the Nokia 3310"
 run/main_scene="res://TitleScreen.tscn"
+boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 1 )
 config/icon="res://icon.png"
 
 [display]
