@@ -5,9 +5,13 @@ var gameover_scene = preload("res://GameOverScreen.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-
     # Init random seed
     randomize()
+
+    new_game()
+
+# Start game and configure scene
+func new_game():
 
     # Set player inital position
     $Player.position = $PlayerPosition.position
@@ -15,8 +19,29 @@ func _ready():
     # Start timers
     $JunkSpawnTimer.start()
 
-    # Start score
+    # Start score and music
     $Score.start()
+    $BackgroundMusic.play()
+
+
+
+func game_over():
+
+    # Stop junk spawn Timer
+    $JunkSpawnTimer.stop()
+
+    # Stop score count
+    $Score.stop()
+
+    # Stop music
+    $BackgroundMusic.stop()
+    $DeathSfx.play()
+
+    # Remove player
+    $Player.queue_free()
+
+    # Instance GameOver message
+    add_child(gameover_scene.instance())
 
 # Time to spawn junk in game scene
 func _on_JunkSpawnTimer_timeout():
@@ -36,15 +61,4 @@ func _on_JunkSpawnTimer_timeout():
 
 # Get signal 'gameover' from Player node
 func _on_Player_gameover():
-
-    # Stop junk spawn Timer
-    $JunkSpawnTimer.stop()
-
-    # Stop score count
-    $Score.stop()
-
-    # Remove player
-    $Player.queue_free()
-
-    # Instance GameOver message
-    add_child(gameover_scene.instance())
+    game_over()
