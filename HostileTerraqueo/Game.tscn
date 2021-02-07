@@ -29,7 +29,6 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-visible = true
 
 [node name="JunkPath" type="Path2D" parent="."]
 curve = SubResource( 1 )
