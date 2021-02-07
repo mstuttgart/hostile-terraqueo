@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://fonts/ARK @somepx/Ark.otf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+size = 5
+font_data = ExtResource( 1 )
+
+[sub_resource type="InputEventAction" id=2]
+resource_local_to_scene = true
+action = "ui_select"
+
+[sub_resource type="ShortCut" id=3]
+resource_local_to_scene = true
+shortcut = SubResource( 2 )
+
+[node name="PressSpaceButton" type="Button"]
+margin_left = 14.0
+margin_top = 24.0
+margin_right = 70.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_disabled = Color( 0.262745, 0.321569, 0.239216, 1 )
+custom_colors/font_color = Color( 0.262745, 0.321569, 0.239216, 1 )
+custom_colors/font_color_hover = Color( 0.262745, 0.321569, 0.239216, 1 )
+custom_colors/font_color_pressed = Color( 0.262745, 0.321569, 0.239216, 1 )
+button_mask = 0
+shortcut = SubResource( 3 )
+text = "Press SPACE"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

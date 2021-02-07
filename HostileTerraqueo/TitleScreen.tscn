@@ -1,10 +1,12 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://fonts/ARK @somepx/Ark.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://sprites/alien.png" type="Texture" id=2]
 [ext_resource path="res://TitleScreen.gd" type="Script" id=3]
+[ext_resource path="res://LabelButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://music/tune.wav" type="AudioStream" id=5]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=1]
 outline_size = 1
 font_data = ExtResource( 1 )
 
@@ -20,7 +22,7 @@ region = Rect2( 8, 0, 8, 8 )
 atlas = ExtResource( 2 )
 region = Rect2( 16, 0, 8, 8 )
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
@@ -28,19 +30,17 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=9]
-size = 5
-font_data = ExtResource( 1 )
-
-[sub_resource type="InputEventAction" id=10]
-action = "ui_select"
-
-[sub_resource type="ShortCut" id=11]
-shortcut = SubResource( 10 )
-
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=6]
 size = 3
 font_data = ExtResource( 1 )
+
+[sub_resource type="InputEventAction" id=7]
+resource_local_to_scene = true
+action = "ui_select"
+
+[sub_resource type="ShortCut" id=8]
+resource_local_to_scene = true
+shortcut = SubResource( 7 )
 
 [node name="TitleScreen" type="Node2D"]
 script = ExtResource( 3 )
@@ -62,7 +62,7 @@ margin_bottom = 35.5006
 grow_horizontal = 2
 grow_vertical = 2
 rect_scale = Vector2( 0.6, 0.6 )
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.780392, 0.941176, 0.847059, 1 )
 custom_colors/font_outline_modulate = Color( 0.262745, 0.321569, 0.239216, 1 )
 custom_colors/font_color_shadow = Color( 0.262745, 0.321569, 0.239216, 1 )
@@ -76,29 +76,8 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 69.8965, 8.34425 )
-frames = SubResource( 6 )
+frames = SubResource( 5 )
 playing = true
-
-[node name="PressSpaceButton" type="Button" parent="."]
-margin_left = 14.0
-margin_top = 24.0
-margin_right = 70.0
-margin_bottom = 41.0
-custom_fonts/font = SubResource( 9 )
-custom_colors/font_color_disabled = Color( 0.262745, 0.321569, 0.239216, 1 )
-custom_colors/font_color = Color( 0.262745, 0.321569, 0.239216, 1 )
-custom_colors/font_color_hover = Color( 0.262745, 0.321569, 0.239216, 1 )
-custom_colors/font_color_pressed = Color( 0.262745, 0.321569, 0.239216, 1 )
-shortcut = SubResource( 11 )
-text = "Press SPACE"
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="PressSpaceTimer" type="Timer" parent="."]
-wait_time = 0.6
-autostart = true
 
 [node name="CreditLabel" type="Label" parent="."]
 visible = false
@@ -109,7 +88,7 @@ margin_left = 10.0794
 margin_top = 42.1446
 margin_right = 74.0794
 margin_bottom = 46.1446
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.262745, 0.321569, 0.239216, 1 )
 custom_colors/font_outline_modulate = Color( 0.262745, 0.321569, 0.239216, 1 )
 text = "Game made to Nokia 3310 GameJame"
@@ -118,5 +97,16 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="PressSpaceButton" parent="." instance=ExtResource( 4 )]
+mouse_filter = 2
+shortcut = SubResource( 8 )
+
+[node name="PressSpaceButtonTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
 [connection signal="pressed" from="PressSpaceButton" to="." method="_on_PressSpaceButton_pressed"]
-[connection signal="timeout" from="PressSpaceTimer" to="." method="_on_PressSpaceTimer_timeout"]
+[connection signal="timeout" from="PressSpaceButtonTimer" to="." method="_on_PressSpaceButtonTimer_timeout"]

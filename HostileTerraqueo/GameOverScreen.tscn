@@ -1,21 +1,55 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://fonts/ARK @somepx/Ark.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://LabelButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameOverScreen.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
+size = 10
 outline_color = Color( 0.262745, 0.321569, 0.239216, 1 )
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=3]
+size = 5
+font_data = ExtResource( 1 )
+
+[sub_resource type="InputEventAction" id=2]
+resource_local_to_scene = true
+action = "ui_select"
+
+[sub_resource type="ShortCut" id=4]
+resource_local_to_scene = true
+shortcut = SubResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 5
+font_data = ExtResource( 1 )
+
+[sub_resource type="InputEventAction" id=6]
+action = "ui_home"
+
+[sub_resource type="ShortCut" id=7]
+shortcut = SubResource( 6 )
+
 [node name="GameOverScreen" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 84.0
+margin_bottom = 48.0
+color = Color( 0.780392, 0.941176, 0.847059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="GameOverLabel" type="Label" parent="."]
-margin_left = 16.2204
-margin_top = 20.0399
-margin_right = 124.22
-margin_bottom = 36.0399
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -12.5
+margin_bottom = -1.5
 grow_horizontal = 2
 grow_vertical = 2
-rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.262745, 0.321569, 0.239216, 1 )
 custom_colors/font_outline_modulate = Color( 0.262745, 0.321569, 0.239216, 1 )
@@ -26,3 +60,38 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ReplayButton" parent="." instance=ExtResource( 2 )]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -47.2508
+margin_top = -20.8026
+margin_right = 48.7492
+margin_bottom = -8.80256
+custom_fonts/font = SubResource( 3 )
+action_mode = 0
+shortcut = SubResource( 4 )
+text = "SPACE -> replay"
+
+[node name="QuitButton" type="Button" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -12.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_disabled = Color( 0.262745, 0.321569, 0.239216, 1 )
+custom_colors/font_color = Color( 0.262745, 0.321569, 0.239216, 1 )
+custom_colors/font_color_hover = Color( 0.262745, 0.321569, 0.239216, 1 )
+custom_colors/font_color_pressed = Color( 0.262745, 0.321569, 0.239216, 1 )
+action_mode = 0
+button_mask = 0
+shortcut = SubResource( 7 )
+text = "ESC -> to quit"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="ReplayButton" to="." method="_on_ReplayButton_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]

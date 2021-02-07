@@ -7,7 +7,6 @@ var gameover_scene = preload("res://GameOverScreen.tscn")
 func _ready():
     # Init random seed
     randomize()
-
     new_game()
 
 # Start game and configure scene
@@ -22,7 +21,6 @@ func new_game():
     # Start score and music
     $Score.start()
     $BackgroundMusic.play()
-
 
 
 func game_over():
@@ -62,3 +60,4 @@ func _on_JunkSpawnTimer_timeout():
 # Get signal 'gameover' from Player node
 func _on_Player_gameover():
     game_over()
+
