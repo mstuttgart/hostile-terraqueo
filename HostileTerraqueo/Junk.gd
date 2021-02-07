@@ -1,8 +1,8 @@
 extends RigidBody2D
 
 # Declare const here
-const MIN_SPEED = 50
-const MAX_SPEED = 70
+const MIN_SPEED = 40
+const MAX_SPEED = 50
 
 
 func start(pos, direction):
@@ -11,11 +11,13 @@ func start(pos, direction):
     position = pos
 
     # Set junk rotation
-    rotation = direction + PI/2
+    rotation = direction + rand_range(-PI/8, PI/8)
 
     # Set the velocity vectior (speed and direction)
     linear_velocity = Vector2(1, 1).normalized() * rand_range(MIN_SPEED, MAX_SPEED)
     linear_velocity = linear_velocity.rotated(direction)
+
+    $AnimatedSprite.play()
 
 # Emmited when VisiblityNotifier2D exits the screen
 func _on_VisibilityNotifier2D_screen_exited():

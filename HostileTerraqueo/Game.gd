@@ -1,10 +1,7 @@
 extends Node2D
 
-var junk_list = [
-    preload("res://JunkSword.tscn"),
-]
-
-var game_over_screen = preload("res://GameOverScreen.tscn")
+var junk_scene = preload("res://Junk.tscn")
+var gameover_scene = preload("res://GameOverScreen.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,10 +21,8 @@ func _ready():
 # Time to spawn junk in game scene
 func _on_JunkSpawnTimer_timeout():
 
-    var idx = rand_range(0, junk_list.size() - 1)
-
     # Instance junk
-    var junk = junk_list[idx].instance()
+    var junk = junk_scene.instance()
 
     # Choose a random location on Path2D
     $JunkPath/JunkSpawnPosition.offset = randi()
@@ -52,4 +47,4 @@ func _on_Player_gameover():
     $Player.queue_free()
 
     # Instance GameOver message
-    add_child(game_over_screen.instance())
+    add_child(gameover_scene.instance())

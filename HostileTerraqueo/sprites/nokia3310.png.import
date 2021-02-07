@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/espada.png-195b0885c8b9cfca16d626eb93aec5de.stex"
+path="res://.import/nokia3310.png-693e4e8f32b6968039579fb3d320e729.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/espada.png"
-dest_files=[ "res://.import/espada.png-195b0885c8b9cfca16d626eb93aec5de.stex" ]
+source_file="res://sprites/nokia3310.png"
+dest_files=[ "res://.import/nokia3310.png-693e4e8f32b6968039579fb3d320e729.stex" ]
 
 [params]
 
